@@ -1,0 +1,23 @@
+# IDE Stuff
+.settings
+settings.xml
+
+# Logs
+logs/*.log
+
+# Test Results
+tests/results/*
+
+# Dependenncies
+node_modules
+coldbox/*
+testbox/*
+artifacts/*
+apidocs/docbox/*
+workbench/*
+build/*
+
+# Modules
+modules/*
+!modules/bugbox
+modules/bugbox/includes

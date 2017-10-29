@@ -1,11 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
+import iView from 'iview';
 import Bugbox from './components/bugbox';
 import BugboxLogin from './components/bugbox-login';
 import BugboxMessaging from './components/bugbox-messaging';
+require("../less/bugbox.less");
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(iView);
 
 // event bus
 window.Event = new Vue();
@@ -45,8 +48,6 @@ const store = new Vuex.Store(
 export default store;
 
 import { mapState } from 'vuex';
-
-require("../less/bugbox.less");
 
 if ( document.getElementById( "app" ) ) {
 	new Vue( {

@@ -1,5 +1,5 @@
 <template>
-    <div class="layout" v-if="settings">
+    <div class="layout main-layout" v-if="settings">
         <div class="layout-ceiling">
             <div class="layout-ceiling-main">
                 <router-link to="/foo"><Icon type="settings"></Icon> Settings</router-link> |
@@ -38,8 +38,10 @@
                 </MenuItem>
             </div>
         </div>
-        <div style="height: 200px">
-        	<router-view></router-view>
+        <div class="layout-content">
+            <div class="layout-content-main">
+                <router-view></router-view>
+            </div>
         </div>
         <div class="layout-copy">
             BugBox

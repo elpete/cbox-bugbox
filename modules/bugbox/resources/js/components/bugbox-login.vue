@@ -1,37 +1,40 @@
 <template>
-	<div class="layout" v-if="!settings">
-		<div class="login-box fade-slow">
-			<div class="login-logo">
-				BugBox
-			</div>
+	<div class="layout login-layout" v-if="!settings">
+        <div class="layout-content">
+            <div class="layout-content-main">        
+            	<Col class="login-box fade-slow" span="8" offset="8">
+                	<h1 class="login-logo text-center">
+                		<Icon type="bug" class="text-danger" />
+						BugBox
+					</h1>
 
-	       	<div class="login-box-body">
-				<overlay-blocker v-if="isProcessing" v-bind:message="processingMessage"></overlay-blocker>
+			       	<div class="login-box-body col-12">
+						<overlay-blocker v-if="isProcessing" v-bind:message="processingMessage"></overlay-blocker>
 
-				<form action="javascript:void(0)" v-on:submit="processLogin">
+						<form action="javascript:void(0)" v-on:submit="processLogin">
+							<Row class="form-group">
+								<h6>Username:</h6>
+								<Input v-model="username" icon="person" placeholder="Enter username"></Input>
+								<h6>Password:</h6>
+								<Input v-model="password" icon="locked" type="password" placeholder="Enter password"></Input>
+							</Row>
+							<Row><br></Row>
+							<Row class="submits">
+								<Button type="success" long>Login</Button>
+							</Row>
 
-					<div class="form-group">
-						<div><label for="username">Username:</label></div>
-						<input type="text" name="username"  v-model="username" class="form-control" />
+						</form>
 
-						<div><label for="username">Password:</label></div>
-						<input type="password" name="password" v-model="password" class="form-control" />
-						<div class="clearfix"></div>
+						<Row class="submits text-center">
+							<small>
+								<a href="#" class="text-muted">Forgot Password?</a>
+							</small>
+						</Row>
 					</div>
-					<div class="form-group submits text-center">
-						<button class="btn btn-block btn-flat">Login</button>
-					</div>
+			    </Col>
+            </div>
+        </div>
 
-				</form>
-
-				<div class="form-group text-center">
-					<small>
-						<a href="#" class="text-muted">Forgot Password?</a>
-					</small>
-				</div>
-			</div>
-
-	    </div>
 	</div>
 </template>
 

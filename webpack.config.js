@@ -42,8 +42,12 @@ module.exports = {
             })
         },
         {
-            test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+            test: /\.(gif|jpg|png)\??.*$/,
             loader: 'url-loader?limit=1024'
+        },
+        {
+        	   test: /\.(woff|ttf|eot|svg)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+             loader: 'url-loader?limit=100000'
         },
         {
             test: /\.(html|tpl)$/,
